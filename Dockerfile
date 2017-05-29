@@ -43,12 +43,10 @@ RUN cd ~
 RUN git clone https://github.com/felipecaldas/peatio.git
 RUN mkdir -p ~/.bitcoin
 RUN cp ./peatio/config/bitcoin.conf ~/.bitcoin/bitcoin.conf
-
-#RUN service rabbitmq-server restart
-#RUN service redis-server start
+RUN cp ./peatio/script/startup /root
+RUN chmod +x /root/startup
 
 WORKDIR ./peatio
-RUN cp /root/peatio/script/startup /root
 RUN bundle install
 
 #RUN bundle exec rake db:setup
