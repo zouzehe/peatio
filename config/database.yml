@@ -2,7 +2,7 @@ development: &defaults
   adapter: mysql2
   encoding: utf8
   database: peatio_development
-  hostname: 127.0.0.1
+  hostname: mysql
   port: 3306
   username: root
   password:

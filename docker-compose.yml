@@ -11,15 +11,13 @@ services:
       - mysql
     ports:
       - 3000:3000
-    command: bash -c "/root/startup"
+    command: bash -c "bundle exec rake db:setup && bundle exec rake daemons:start && bundle exec rails server"
     stdin_open: true
     tty: true
   mysql:
     image: mysql:5.7
     environment:
       MYSQL_ALLOW_EMPTY_PASSWORD: 'true'
-    ports:
-      - 3306:3306
   bitcoind:
     image: kylemanna/bitcoind:latest
     command: btc_oneshot
