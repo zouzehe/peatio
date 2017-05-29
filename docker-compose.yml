@@ -1,0 +1,26 @@
+version: '3'
+services:
+  web:
+    build: .
+    volumes:
+      - .:/root/peatio
+    links:
+      - bitcoind
+    depends_on:
+      - mysql
+    ports:
+      - 3000:3000
+    command: /root/startup
+  mysql:
+    image: mysql:5.7
+    environment:
+      MYSQL_ALLOW_EMPTY_PASSWORD: 'true'
+  bitcoind:
+    image: kylemanna/bitcoind:latest
+    command: btc_oneshot
+    ports:
+      - 8333:8333
+      - 8332:8332
+    volumes:
+      - ./data/bitcoind/db:/data/bitcoind/db
+    command: mongod --smallfiles

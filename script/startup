@@ -1,0 +1,8 @@
+#!/bin/bash
+
+service redis-server start &
+service rabbitmq-server restart &
+
+cd /root/peatio
+bundle exec rake daemons:start &
+bundle exec rails server &
