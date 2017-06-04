@@ -7,10 +7,10 @@
   type: WithdrawChannelSatoshi
 - id: 400
   key: bank
-  currency: cny
+  currency: aud
   fixed: 2
   fee_max: 0
-  min: 100
+  min: 10
   max: 50000
   fee: 0.003
   proportion: true

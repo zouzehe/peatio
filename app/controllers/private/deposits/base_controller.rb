@@ -16,4 +16,3 @@ module Private
     end
   end
 end
-

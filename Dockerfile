@@ -49,8 +49,4 @@ RUN chmod +x /root/startup
 WORKDIR ./peatio
 RUN bundle install
 
-#RUN bundle exec rake db:setup
-#RUN bundle exec rake daemons:start
-#RUN bundle exec rails server
-
 EXPOSE 3000:3000

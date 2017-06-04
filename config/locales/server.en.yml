@@ -890,7 +890,7 @@ en:
         auth-verified: Please verify your account first.
         email:
           title: E-mail verification
-          description: Your e-mail has not been verified, click the "Send Mail" button
+          description: Your e-mail has not been verified, click the "Send yyyMail" button
             to complete the verification
           description-activated: Your email adress has been verified successfully,
             remember and protect this e-mail address, it is the single certificate

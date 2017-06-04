@@ -18,3 +18,13 @@
   ask: {fee: 0, currency: eth, fixed: 4}
   sort_order: 1
   #visible: false     # default to true
+- id: xrpbtc
+  code: 5
+  #name: XRP/BTC      # default name
+  base_unit: xrp
+  quote_unit: btc
+  #price_group_fixed: 1 # aggregate price levels in orderbook
+  bid: {fee: 0, currency: xrp, fixed: 2}
+  ask: {fee: 0, currency: btc, fixed: 4}
+  sort_order: 1
+  #visible: false     # default to true

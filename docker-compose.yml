@@ -11,11 +11,14 @@ services:
       - mysql
     ports:
       - 3000:3000
+    #command: bash -c "service redis-server start && service rabbitmq-server restart && bundle exec rake db:setup && bundle exec rake daemons:start && bundle exec rails server"
     command: bash -c "service redis-server start && service rabbitmq-server restart && bundle exec rake daemons:start && bundle exec rails server"
     stdin_open: true
     tty: true
   mysql:
     image: mysql:5.7
+    ports:
+      - 3306:3306
     environment:
       MYSQL_ALLOW_EMPTY_PASSWORD: 'true'
   bitcoind:
@@ -26,4 +29,5 @@ services:
       - 8332:8332
     volumes:
       - ./data/bitcoind/db:/data/bitcoind/db
-    command: mongod --smallfiles
+    logging:
+      driver: none
