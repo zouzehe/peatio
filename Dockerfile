@@ -40,7 +40,7 @@ RUN apt-get --yes install nodejs
 #RUN mv rabbitmqadmin /usr/local/sbin
 
 RUN cd ~
-RUN git clone https://github.com/felipecaldas/peatio.git
+RUN git clone https://github.com/zouzehe/peatio.git
 RUN mkdir -p ~/.bitcoin
 RUN cp ./peatio/config/bitcoin.conf ~/.bitcoin/bitcoin.conf
 RUN cp ./peatio/script/startup /root
