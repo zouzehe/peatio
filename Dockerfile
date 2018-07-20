@@ -47,6 +47,7 @@ RUN cp ./peatio/script/startup /root
 RUN chmod +x /root/startup
 
 WORKDIR ./peatio
+RUN bundle update json
 RUN bundle install
 
 EXPOSE 3000:3000
